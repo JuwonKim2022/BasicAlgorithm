@@ -1,8 +1,8 @@
-package ch003;
+package ch01String;
 
 import java.util.Scanner;
 
-public class Main2 {
+public class Main032 {
     public String sol(String str){
         String answer = "";
         //int 최저값 디폴트화하기
@@ -25,7 +25,7 @@ public class Main2 {
         return answer;
     }
     public static void main(String[] args) {
-        Main2 M = new Main2();
+        Main032 M = new Main032();
         Scanner sc = new Scanner(System.in);
 
         String str = sc.nextLine();

@@ -1,29 +1,25 @@
-package ch002;
+package ch01String;
 
 import java.util.Scanner;
 
-public class Main1 {
-
+// 소문자에서 32 빼면 대문자
+public class Main021 {
     public String sol(String str){
         String answer = "";
-
         for(char x : str.toCharArray()){
-            if(Character.isLowerCase(x)){
-                answer += Character.toUpperCase(x);
-            } else {
-                answer += Character.toLowerCase(x);
+            if(x >= 97 && x <= 122){
+                answer += (char)(x-32);
+            }else {
+                answer += (char)(x+32);
             }
         }
         return answer;
     }
-
     public static void main(String[] args) {
-        Main1 M = new Main1();
+        Main021 M = new Main021();
         Scanner sc = new Scanner(System.in);
 
         String str = sc.next();
-
         System.out.println(M.sol(str));
     }
-
 }

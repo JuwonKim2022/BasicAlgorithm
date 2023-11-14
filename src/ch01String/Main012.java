@@ -1,16 +1,15 @@
-package ch001;
+package ch01String;
 
 import java.util.Scanner;
 
-public class Main1 {
-
+public class Main012 {
     public int solution(String str, char c){
         int answer = 0;
         str = str.toUpperCase();
         c = Character.toUpperCase(c);
 
-        for(int i = 0; i<str.length(); i++){
-            if(str.charAt(i) == c){
+        for(char x : str.toCharArray()){
+            if(x == c){
                 answer++;
             }
         }
@@ -18,7 +17,7 @@ public class Main1 {
     }
 
     public static void main(String[] args) {
-        Main1 M = new Main1();
+        Main012 M = new Main012();
 
         Scanner sc = new Scanner(System.in);
         String str = sc.next();

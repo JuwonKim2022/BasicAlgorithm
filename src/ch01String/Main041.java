@@ -1,9 +1,9 @@
-package ch04;
+package ch01String;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main1 {
+public class Main041 {
 
     public ArrayList<String> sol(int n, String[] str){
         ArrayList<String> answer = new ArrayList<>();
@@ -15,7 +15,7 @@ public class Main1 {
     }
 
     public static void main(String[] args) {
-        Main1 M = new Main1();
+        Main041 M = new Main041();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         String[] str = new String[n];

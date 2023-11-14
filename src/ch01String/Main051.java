@@ -1,8 +1,8 @@
-package ch05;
+package ch01String;
 
 import java.util.*;
 
-public class Main1 {
+public class Main051 {
 
     public String sol(String str){
         String answer;
@@ -27,7 +27,7 @@ public class Main1 {
     }
 
     public static void main(String[] args) {
-        Main1 M = new Main1();
+        Main051 M = new Main051();
         Scanner sc = new Scanner(System.in);
 
         String str = sc.next();

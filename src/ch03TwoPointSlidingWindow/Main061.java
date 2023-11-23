@@ -1,23 +1,23 @@
 package ch03TwoPointSlidingWindow;
 import java.util.Scanner;
 /*
-<연속된 자연수의 합 2>
-N입력으로 양의 정수 N이 입력되면 2개 이상의 연속된 자연수의 합으로 정수 N을 표현하는 방법의 가짓수를 출력하는 프로그램
-- 첫 번째 줄에 양의 정수 7<=N<=1000
-
-=>몫과 나머지 : 15 일 경우!
-1.2개의 숫자가능한가? 1,2 - (15-3)/2=6, 7,8 : 6을 동등하게 배분
-2.3개의 숫자가능한가? 1,2,3 - (15-6)/3=3, 4,5,6 : 3을 동등하게 배분
-...
+<최대 길이 연속부분수열>
+0과 1로 구성된 길이가 N인 수열,
+최대 k번을 0을 1로 변경 > 최대 k번의 변경을 통해 이 수열에서 1로만 구성된 최대 길이의 연속부분수열을 찾는 프로그램 작성
+- 첫 번째 줄에 수열의 길이인 자연수 5<=N<=100,000
+- 두 번째 줄에 N길이의 0과 1로 구성된 수열
+ ===> 투 포인트 알고리
  */
 public class Main061 {
-    public int sol(int n){
-        int answer=0, cnt=1;
-        n--;
-        while(n>0){
-            cnt++;
-            n = n-cnt;
-            if (n%cnt==0) answer++;
+    public int sol(int n, int k, int[] arr){
+        int answer=0, cnt=0, lt=0;
+        for (int rt=0; rt<n; rt++){
+            if (arr[rt]==0) cnt++;
+            while (cnt>k){
+                if (arr[lt]==0) cnt--;
+                lt++;
+            }
+            answer=Math.max(answer, rt-lt+1);
         }
         return answer;
     }
@@ -25,6 +25,11 @@ public class Main061 {
         Main061 T = new Main061();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println(T.sol(n));
+        int k = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(T.sol(n, k, arr));
     }
 }

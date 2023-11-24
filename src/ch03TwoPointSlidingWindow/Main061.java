@@ -1,23 +1,31 @@
 package ch03TwoPointSlidingWindow;
+import java.util.Collections;
 import java.util.Scanner;
+import java.util.TreeSet;
+
 /*
-<최대 길이 연속부분수열>
-0과 1로 구성된 길이가 N인 수열,
-최대 k번을 0을 1로 변경 > 최대 k번의 변경을 통해 이 수열에서 1로만 구성된 최대 길이의 연속부분수열을 찾는 프로그램 작성
-- 첫 번째 줄에 수열의 길이인 자연수 5<=N<=100,000
-- 두 번째 줄에 N길이의 0과 1로 구성된 수열
- ===> 투 포인트 알고리
+<K번째 큰 수>
+1~100 사이 자연수 적힌 N장 카드, 같은 숫자 카드 중복 가능
+3장 뽑아 기록 - 모든 경우수 기록하기
+- 첫 번째 줄에 자연수 5<=N<=100, 1<=K<=50
+- 두 번째 줄에 N개의 카드값 입력
+ ===> 해쉬 + set(중복제거)/TreeSet(중복제거+정렬)
  */
 public class Main061 {
-    public int sol(int n, int k, int[] arr){
-        int answer=0, cnt=0, lt=0;
-        for (int rt=0; rt<n; rt++){
-            if (arr[rt]==0) cnt++;
-            while (cnt>k){
-                if (arr[lt]==0) cnt--;
-                lt++;
+    public int sol(int[] arr, int n, int k){
+        int answer=-1;
+        TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
+        for (int i=0; i<n; i++){
+            for (int j=i+1; j<n; j++){
+                for (int l=j+1; l<n; l++){
+                    Tset.add(arr[i]+arr[j]+arr[l]);
+                }
             }
-            answer=Math.max(answer, rt-lt+1);
+        }
+        int cnt = 0;
+        for (int x : Tset){
+            cnt++;
+            if (cnt==k) return x;
         }
         return answer;
     }
@@ -30,6 +38,14 @@ public class Main061 {
         for (int i=0; i<n; i++){
             arr[i] = sc.nextInt();
         }
-        System.out.println(T.sol(n, k, arr));
+        System.out.println(T.sol(arr, n, k));
     }
 }
+
+/*
+<TreeSet method>
+1. Tset.remove(143); 143 부분 지워라
+2. Tset.size(); 원소 갯수 알려줌
+3. Tset.first(); 내림차순에서 최대값, 오름차순에서 최소값
+4. Tset.last(); 내림차순에서 최소값, 오름차순에서 최대값
+*/

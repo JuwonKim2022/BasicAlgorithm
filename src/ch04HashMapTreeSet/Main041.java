@@ -27,7 +27,7 @@ public class Main041 {
         //투포인트 알고리즘
         int lt = 0;
         for (int rt=L; rt<a.length(); rt++){
-            am.put(a.charAt(rt), am.getOrDefault(a.charAt(rt),0)+1);
+            am.put(a.charAt(rt), am.getOrDefault(a.charAt(rt    ),0)+1);
             if (am.equals(bm)) answer++;
             am.put(a.charAt(lt), am.get(a.charAt(lt))-1);
             if (am.get(a.charAt(lt))==0) am.remove(a.charAt(lt));

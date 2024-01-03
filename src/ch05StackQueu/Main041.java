@@ -4,7 +4,6 @@ package ch05StackQueu;
  * 후위식 연산
  * 첫 줄에 후위연산식, 연산식 길이 50 안 넘음
  * 예)352+*9- : 12
- *
  * 숫자면 스택에 푸시
  * 기호 나오면 : 숫자 두 개 빼고 기호 처리 -> 결과값 다시 푸시
  */
@@ -36,6 +35,7 @@ public class Main041 {
         answer = stack.get(0);
         return answer;
     }
+
 
     public static void main(String[] args) {
         Main041 T = new Main041();

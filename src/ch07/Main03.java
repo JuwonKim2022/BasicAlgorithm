@@ -1,7 +1,5 @@
 package ch07;
 
-import java.util.Scanner;
-
 /*
  * 팩토리얼
  * - 자연수 N 입력되면 N! 구하는 프로그램 작성

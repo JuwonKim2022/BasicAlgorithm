@@ -12,5 +12,5 @@ import java.util.*;
  *  2. 방향 그래프
  */
 public class Main11 {
-
+    int a = 1;
 }

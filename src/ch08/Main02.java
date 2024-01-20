@@ -17,7 +17,6 @@ public class Main02 {
             DFS(L+1, sum, arr);
         }
     }
-
     public static void main(String[] args) {
         Main02 T = new Main02();
         Scanner sc = new Scanner(System.in);

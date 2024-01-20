@@ -1,7 +1,5 @@
 package ch08;
-
 import java.util.*;
-
     /*
      * <합이 같은 부분집합 - DFS>
      * N개 원소로 구성된 자연수 집합, 두 개의 부분집합으로 나눔

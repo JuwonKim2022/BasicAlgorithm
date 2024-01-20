@@ -5,7 +5,6 @@ import java.util.*;
 /*
  * <최대점수 구하기 - DFS>
  * N개의 문제 풀기, 제한시간 M 안에 N개의 문제 중 최대 점수 얻기
- *
  */
 public class Main03 {
     static int answer = Integer.MIN_VALUE, n, m;
